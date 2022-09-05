@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let computerChoice
+
+        function getComputerChoice() {
+            const randomNumber = Math.floor(Math.random() * 3) + 1
+            
+            if( randomNumber == 1){
+                computerChoice = 'rock'
+            } else if( randomNumber == 2){
+                computerChoice = 'paper'
+            } else {
+                computerChoice = 'scissors'
+            }
+        }
+            
+        function playRound( playerSelection, computerSelection ) {
+            let playerChoice = window.prompt( "Rock, paper, scissors, shoot! " )
+
+            if( playerChoice == 'rock' && computerChoice == 'rock') {
+                console.log( "We have a tie!" )
+            }
+            if( playerChoice == 'paper' && computerChoice == 'paper') {
+                console.log( "We have a tie!" )
+            }
+            if( playerChoice == 'scissors' && computerChoice == 'scissors') {
+                console.log( "We have a tie!" )
+            }
+
+            if( playerChoice == 'rock' && computerChoice == 'paper') {
+                console.log( "You lose, the computer chose paper." )
+            }
+            if( playerChoice == 'rock' && computerChoice == 'scissors') {
+                console.log( "You win, the computer chose scissors!" )
+            }
+
+            if( playerChoice == 'paper' && computerChoice == 'scissors') {
+                console.log( "You lose, the computer chose scissors." )
+            }
+            if( playerChoice == 'paper' && computerChoice == 'rock') {
+                console.log( "You win, the computer chose rock!" )
+            }
+
+            if( playerChoice == 'scissors' && computerChoice == 'rock') {
+                console.log( "You lose, the computer chose rock." )
+            }
+            if( playerChoice == 'scissors' && computerChoice == 'paper') {
+                console.log( "You win, the computer chose paper!" )
+            }
+        }
+
+        function game() {
+            for( i = 0; i < 5; i++) {
+                playRound()
+                
+            }
+        }
+
+        getComputerChoice()
+        game()
+        
+
+
+    </script>
+    
+</body>
+</html>
